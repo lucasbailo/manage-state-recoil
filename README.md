@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+## Welcome again to another TypeScript project! 👋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Agenda App!
 
-## Available Scripts
+## Test the project yourself: [Teste the project here!!!](https://manage-state-recoil.vercel.app/)
 
-In the project directory, you can run:
+### Home Page
 
-### `npm start`
+<img src="./public/Main.png" alt="Main page" width="50%">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Drag and Drop 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="./public/drag.png" alt="Drag" width="50%">
 
-### `npm test`
+## Filter
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./public/filter.png" alt="Filter" width="50%">
 
-### `npm run build`
+## Debug observer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="./public/debug.png" alt="Debug" width="50%">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Some code that I'm proud of
+```js
+const [data, setData] = useState('')
+const [status, setStatus] = useState<IFiltroStatus>("Ambos");
 
-### `npm run eject`
+const setFiltroDeEvento = useSetRecoilState<IFiltroDeEventos>(filtroDeEventos)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+const submeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
+evento.preventDefault();
+const filtro: IFiltroDeEventos = {
+    status,
+};
+data ? (filtro.data = new Date(data)) : (filtro.data = null);
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+setFiltroDeEvento(filtro);
+};
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+const opcoesFiltro = ["Ambos", "Completos", "Incompletos"];
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Built with
 
-## Learn More
+- `React`
+- `React Hooks`
+- `TypeScript`
+- `Recoil`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## You Can
+- Add, Delete and Edit Events;
+- Filter events by date;
+- Drag and Drop;
+- Check a finished event.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
+
+- Website - [My GitHub](https://github.com/lucasbailo)
+- Frontend Mentor - [@lucasbailo](https://www.frontendmentor.io/profile/lucasbailo)
+- Instagram - [@lucassbailo](https://www.instagram.com/lucassbailo/)
+- LinkedIn - [Lucas Bailo](https://www.linkedin.com/in/lcsbailo)
