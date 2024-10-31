@@ -47,6 +47,7 @@ const opcoesFiltro = ["Ambos", "Completos", "Incompletos"];
 - `React Hooks`
 - `TypeScript`
 - `Recoil`
+- [Json Server](https://github.com/typicode/json-server#getting-started)
 
 ## You Can
 - Add, Delete and Edit Events;
